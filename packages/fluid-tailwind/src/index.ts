@@ -292,7 +292,7 @@ const fluidPlugin = (options: PluginOptions = {}, api: PluginAPI) => {
 					? plug(undefined).handler
 					: plug
 				: plug.handler
-		if (!(IS_FLUID_PLUGIN in handler)) handler(fluidPluginAPI)
+		if (handler && !(IS_FLUID_PLUGIN in handler)) handler(fluidPluginAPI)
 	})
 
 	// Screen variants
